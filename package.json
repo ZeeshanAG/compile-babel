@@ -1,0 +1,24 @@
+{
+  "name": "compile-babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "prebuild": "npm run lint",
+    "build": "babel src --out-dir compiled --source-maps --extensions '.js,.jsx,.ts,.tsx' --presets=@babel/preset-react,@babel/preset-typescript",
+    "watch": "chokidar 'src/**/*.{js,jsx,ts,tsx}' -c 'npm run build'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "@babel/preset-typescript": "^7.24.1",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "chokidar-cli": "^3.0.0"
+  }
+}
